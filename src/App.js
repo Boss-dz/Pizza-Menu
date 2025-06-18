@@ -1,4 +1,3 @@
-import "./App.css";
 
 const pizzaData = [
   {
@@ -44,7 +43,6 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
 function Header() {
   return (
     <h1 className="header">
@@ -55,7 +53,9 @@ function Header() {
 function Menu() {
   return (
     <main className="menu">
-      <h2>Our Menu</h2>
+      <h2>
+        Our Menu
+      </h2>
       <ul className="pizzas">
         {pizzaData.map((pizza) => (
           <Pizza pizzaObj={pizza} key={pizza.name} />
@@ -93,7 +93,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {isOpen && <Order />}
+      {isOpen ? <Order /> : <p>Sorry, we are currently closed</p>}
     </footer>
   );
 }
